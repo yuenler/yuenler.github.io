@@ -94,7 +94,8 @@ const Life = () => {
     const fetchBlogPosts = async () => {
       const snapshot = await firestore.collection('blog').get();
       const posts = snapshot.docs.map((doc) => doc.data());
-      setBlogPosts(posts);
+      const sortedPosts = posts.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+      setBlogPosts(sortedPosts);
     };
 
     const unsubscribe = auth.onAuthStateChanged((user) => {
