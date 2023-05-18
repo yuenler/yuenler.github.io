@@ -70,7 +70,7 @@ function App() {
     window.history.scrollRestoration = 'manual'
 
     const cursor = cursorRef.current;
-    let direction = -1;
+    let direction = 1;
     let phraseIdx = 0;
     let sentence = phrases[phraseIdx].phrase;
     let cursorPos = 0;
