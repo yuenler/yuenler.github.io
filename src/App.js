@@ -73,7 +73,7 @@ function App() {
     let direction = -1;
     let phraseIdx = 0;
     let sentence = phrases[phraseIdx].phrase;
-    let cursorPos = sentence.length;
+    let cursorPos = 0;
     let blinking = false;
     let blinkIntervals = 0;
 
