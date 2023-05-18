@@ -6,12 +6,17 @@ import quidditch from './images/quidditch.jpg';
 import chef from './images/chef.jpg';
 import stem from './images/stem.jpg';
 import app from './images/app.jpg';
+import siblings from './images/siblings.jpg';
 import './App.css';
 import LearnMore from './LearnMore';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 const phrases = [
+  {
+    phrase: 'middle child',
+    image: siblings
+  },
   {
     phrase: 'website and app builder',
     image: app
