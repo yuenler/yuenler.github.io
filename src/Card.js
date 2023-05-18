@@ -50,7 +50,7 @@ function Card({
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <img src={image} style={{ width: 300, backgroundColor: color }} />
+            <img src={image} style={{ width: 300, backgroundColor: color }} alt="cardImage" />
           </div>
           <div className="flip-card-back">
             <h2>{title}</h2>

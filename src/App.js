@@ -92,7 +92,7 @@ function App() {
     const intervalId = setInterval(() => {
       const atStart = cursorPos === 0;
       const atEnd = cursorPos === sentence.length;
-      if (atStart && direction === -1 || atEnd && direction === 1) { switchDirection(); }
+      if ((atStart && direction === -1) || (atEnd && direction === 1)) { switchDirection(); }
 
       if (!blinking) {
         cursorPos += direction;
@@ -117,7 +117,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div style={{ margin: 20 }}>
-          <img src={image} className="profilePic" />
+          <img src={image} className="profilePic"
+            alt="Yuen Ler"
+          />
         </div>
         <h1>Hello 👋! I'm Yuen Ler.</h1>
         <div>
