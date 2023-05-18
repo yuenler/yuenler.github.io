@@ -10,7 +10,7 @@ import siblings from './images/siblings.jpg';
 import './App.css';
 import LearnMore from './LearnMore';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const phrases = [
   {

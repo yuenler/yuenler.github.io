@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Work from "./Work";
 import Life from "./Life";
 import Sleep from "./Sleep";
-import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 

@@ -3,8 +3,11 @@
 }
 
 .profilePic {
+  max-width: 500px;
   max-height: 500px;
-  height: 80%;
+  width: 80%;
+  height: auto;
+  object-fit: contain;
   border-radius: 10%;
 }
 
