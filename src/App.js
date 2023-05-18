@@ -10,7 +10,7 @@ import siblings from './images/siblings.jpg';
 import './App.css';
 import LearnMore from './LearnMore';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const phrases = [
   {
@@ -128,11 +128,11 @@ function App() {
         </div>
         <h1>Hello 👋! I'm Yuen Ler.</h1>
         <div>
-          <span style={{ fontSize: 30 }}>I am a </span><span>{`${typingText}`}</span><span
-            ref={cursorRef} className="blink">|</span>
+          <span style={{ fontSize: 30 }}>I am a </span><span style={{ fontSize: 30 }}>{`${typingText}`}</span><span
+            ref={cursorRef} className="blink" style={{ fontSize: 30 }}>|</span>
         </div>
         <button onClick={handleScroll} className="hoverButton">
-          Learn More <FontAwesomeIcon icon={faArrowDown} />
+          <p>Learn More</p> <FontAwesomeIcon icon={faChevronDown} />
         </button>
       </header >
       <div ref={scrollRef}>

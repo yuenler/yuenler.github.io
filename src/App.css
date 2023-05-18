@@ -3,7 +3,9 @@
 }
 
 .profilePic {
-  height: 40vmin;
+  max-height: 500px;
+  height: 80%;
+  border-radius: 10%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -58,9 +60,11 @@
   font-size: 24px;
   cursor: pointer;
   margin-top: 20px;
+  transition: transform 0.3s ease;
+
 
   &:hover {
-    transform: translateY(2px);
+    transform: translateY(2px) scale(1.5) perspective(1px);
   }
 }
 

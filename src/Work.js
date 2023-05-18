@@ -7,6 +7,7 @@ import broad from './images/Fig1_projectoutline.tiff';
 import gbstem from './images/penguin.png';
 import ssp from './images/orbitviz_1.png';
 import bhs from './images/bhs.jpg';
+import hackharvard from './images/hh.jpg';
 
 
 function Work() {
@@ -20,6 +21,14 @@ function Work() {
           >here</a>.</p>
       </div>
       <div className="d-flex flex-wrap justify-content-center">
+
+        <Card
+          title="HackHarvard"
+          description="Executive Director of HackHarvard"
+          longDescription="Led Harvard's largest international hackathon, attended annually by 500+ students and 30+ volunteers."
+          image={hackharvard}
+          color='pink'
+        />
 
         <Card
           title="Harvard Division of Continuing Education"
