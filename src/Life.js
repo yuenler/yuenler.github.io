@@ -92,10 +92,10 @@ const Life = () => {
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
-      const snapshot = await firestore.collection('blog').get();
+      const snapshot = await firestore.collection('blog').orderBy('timestamp', 'desc').get();
       const posts = snapshot.docs.map((doc) => doc.data());
-      const sortedPosts = posts.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-      setBlogPosts(sortedPosts);
+      // const sortedPosts = posts.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+      setBlogPosts(posts);
     };
 
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -118,7 +118,7 @@ const Life = () => {
       return;
     }
 
-    const timestamp = new Date().toISOString();
+    const timestamp = new Date().getTime();
     const post = {
       timestamp,
       text: newPost,
@@ -127,6 +127,8 @@ const Life = () => {
     await firestore.collection('blog').add(post);
 
     setNewPost('');
+
+    setBlogPosts([post, ...blogPosts]);
   };
 
   const formatDate = (timestamp) => {
