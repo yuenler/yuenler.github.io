@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d0a7a75f.css",
+    "main.js": "/static/js/main.feefa5df.js",
+    "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
+    "static/media/dance.jpg": "/static/media/dance.320d00245591a37492d1.jpg",
+    "static/media/beaver.png": "/static/media/beaver.6dc871b6be9c1ad80b2a.png",
+    "static/media/quidditch.jpg": "/static/media/quidditch.ebcfe8512d3cee3fd7a2.jpg",
+    "static/media/Fig1_projectoutline.tiff": "/static/media/Fig1_projectoutline.a8c07ec2a63772833ee5.tiff",
+    "static/media/chef.jpg": "/static/media/chef.75a57b6e916a004ab634.jpg",
+    "static/media/magic.jpg": "/static/media/magic.0f79057a8ae4cde6b885.jpg",
+    "static/media/stem.jpg": "/static/media/stem.6f056759045e1ccd8607.jpg",
+    "static/media/marathon.jpg": "/static/media/marathon.fc31374445eb9293db15.jpg",
+    "static/media/app.jpg": "/static/media/app.0faedb5de433d1776849.jpg",
+    "static/media/sleep.jpg": "/static/media/sleep.1bc029dbfc5a3ceddba5.jpg",
+    "static/media/eniac.png": "/static/media/eniac.674e37e443f80114102e.png",
+    "static/media/penguin.png": "/static/media/penguin.154a4d791f1a2a6d32c9.png",
+    "static/media/dce.png": "/static/media/dce.f96e006d64391f8bd59b.png",
+    "static/media/bhs.jpg": "/static/media/bhs.1e57233aa08f96c525d4.jpg",
+    "static/media/orbitviz_1.png": "/static/media/orbitviz_1.98c9b1d5b195c881e141.png",
+    "static/media/wado.png": "/static/media/wado.e7f1f33dc1da08de389c.png",
+    "index.html": "/index.html",
+    "main.d0a7a75f.css.map": "/static/css/main.d0a7a75f.css.map",
+    "main.feefa5df.js.map": "/static/js/main.feefa5df.js.map",
+    "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0a7a75f.css",
+    "static/js/main.feefa5df.js"
+  ]
+}
