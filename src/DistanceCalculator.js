@@ -1,0 +1,78 @@
+import React, { useState } from 'react';
+
+const DistanceCalculator = () => {
+  const [distanceMessage, setDistanceMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+
+  const calculateDistance = () => {
+    setIsLoading(true);
+    // Function to calculate distance between two coordinates
+    const calculateDistanceInMiles = (lat1, lon1, lat2, lon2) => {
+      const R = 3958.8; // Radius of the Earth in miles
+      const dLat = toRadians(lat2 - lat1);
+      const dLon = toRadians(lon2 - lon1);
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRadians(lat1)) *
+        Math.cos(toRadians(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = R * c;
+      return distance;
+    };
+
+    // Function to convert degrees to radians
+    const toRadians = (degrees) => {
+      return degrees * (Math.PI / 180);
+    };
+
+    // Get user's current location
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLat = position.coords.latitude;
+        const userLon = position.coords.longitude;
+        const cambridgeLat = 42.373611; // Latitude of Cambridge, MA
+        const cambridgeLon = -71.109733; // Longitude of Cambridge, MA
+
+        const distanceInMiles = calculateDistanceInMiles(
+          userLat,
+          userLon,
+          cambridgeLat,
+          cambridgeLon
+        );
+
+        let distanceInMilesRounded = Math.round(distanceInMiles);
+
+        if (distanceInMiles < 5) {
+          setDistanceMessage('You are less than 5 miles away from me!');
+        }
+        else {
+          setDistanceMessage(`You are ${distanceInMilesRounded} miles away from me!`);
+        }
+        setIsLoading(false);
+
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  };
+
+  return (
+    <div>
+      <p>I am based in Cambridge, MA. </p>
+
+      {isLoading ? <p>Calculating your distance from me...</p> :
+        distanceMessage ? <p>{distanceMessage}</p>
+          :
+          <button className='btn btn-primary'
+            onClick={calculateDistance}>
+            How far are you from me?
+          </button>}
+    </div>
+  );
+};
+
+export default DistanceCalculator;

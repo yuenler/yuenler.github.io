@@ -3,14 +3,18 @@ import dance from './images/dance.jpg';
 import marathon from './images/marathon.jpg';
 import magic from './images/magic.jpg';
 import quidditch from './images/quidditch.jpg';
-import chef from './images/chef.jpg';
+import chef from './images/chef.jpeg';
 import stem from './images/stem.jpg';
-import app from './images/app.jpg';
-import siblings from './images/siblings.jpg';
+import app from './images/app.jpeg';
+import siblings from './images/siblings.jpeg';
+import hackathon from './images/hackathon.jpeg';
 import './App.css';
 import LearnMore from './LearnMore';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import DistanceCalculator from './DistanceCalculator';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const phrases = [
   {
@@ -18,12 +22,16 @@ const phrases = [
     image: siblings
   },
   {
-    phrase: 'website and app builder',
+    phrase: 'software engineer',
     image: app
   },
   {
     phrase: 'STEM educator',
     image: stem
+  },
+  {
+    phrase: 'hackathon director',
+    image: hackathon
   },
   {
     phrase: 'dancer',
@@ -49,8 +57,6 @@ const phrases = [
 
 
 function App() {
-
-
   const [typingText, setTypingText] = useState("");
   const [image, setImage] = useState(phrases[0].image);
   const cursorRef = useRef(null);
@@ -131,6 +137,7 @@ function App() {
           <span style={{ fontSize: 30 }}>I am a </span><span style={{ fontSize: 30 }}>{`${typingText}`}</span><span
             ref={cursorRef} className="blink" style={{ fontSize: 30 }}>|</span>
         </div>
+        <DistanceCalculator />
         <button onClick={handleScroll} className="hoverButton">
           <p>Learn More</p> <FontAwesomeIcon icon={faChevronDown} />
         </button>
