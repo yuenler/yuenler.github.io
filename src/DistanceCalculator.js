@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 const DistanceCalculator = () => {
   const [distanceMessage, setDistanceMessage] = useState('');
@@ -46,10 +47,10 @@ const DistanceCalculator = () => {
         let distanceInMilesRounded = Math.round(distanceInMiles);
 
         if (distanceInMiles < 5) {
-          setDistanceMessage('You are less than 5 miles away from me!');
+          setDistanceMessage("I'm less than 5 miles from you! Come say hi :)");
         }
         else {
-          setDistanceMessage(`You are ${distanceInMilesRounded} miles away from me!`);
+          setDistanceMessage(`I'm ${distanceInMilesRounded} miles away from you!`);
         }
         setIsLoading(false);
 
@@ -62,16 +63,25 @@ const DistanceCalculator = () => {
 
   return (
     <div>
-      <p>I am based in Cambridge, MA. </p>
+      <p
+        style={{ fontSize: '1rem' }}
+      >I am based in Cambridge, MA. </p>
 
-      {isLoading ? <p>Calculating your distance from me...</p> :
-        distanceMessage ? <p>{distanceMessage}</p>
+      {
+        isLoading ? <div>
+          <div className="loading-bar-container">
+            <div className="loading-bar"></div>
+          </div>
+          <p style={{ fontSize: '1rem' }}>Calculating my distance to you...</p>
+        </div>
           :
-          <button className='btn btn-primary'
-            onClick={calculateDistance}>
-            How far are you from me?
-          </button>}
-    </div>
+          distanceMessage ? <p className="distance-message">{distanceMessage}</p>
+            :
+            <button className='btn-pretty' onClick={calculateDistance}>
+              how far am i from you?
+            </button>
+      }
+    </div >
   );
 };
 
