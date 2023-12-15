@@ -27,14 +27,14 @@ const phrases = [
     phrase: 'marathon runner',
     image: marathon
   },
-  {
-    phrase: 'magician',
-    image: magic
-  },
-  {
-    phrase: 'Quidditch player',
-    image: quidditch
-  },
+  // {
+  //   phrase: 'magician',
+  //   image: magic
+  // },
+  // {
+  //   phrase: 'Quidditch player',
+  //   image: quidditch
+  // },
   {
     phrase: 'dancer',
     image: dance
