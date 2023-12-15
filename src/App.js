@@ -85,7 +85,10 @@ function App() {
       });
     },
     onDragEnd: ({ args: [index], movement: [mx] }) => {
-      if (Math.abs(mx) < 100) {
+      const isTouchScreen = window.matchMedia('(hover: none)').matches;
+
+      // Bypass the check if the device is a touchscreen
+      if (!isTouchScreen && Math.abs(mx) < 100) {
         return;
       }
       // Animate the card moving downwards
