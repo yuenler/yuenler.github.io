@@ -85,7 +85,7 @@ function App() {
       });
     },
     onDragEnd: ({ args: [index], movement: [mx] }) => {
-      if (mx < 100) {
+      if (Math.abs(mx) < 100) {
         return;
       }
       // Animate the card moving downwards
