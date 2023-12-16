@@ -65,22 +65,31 @@ function App() {
   const [cards, setCards] = useState(phrases);
 
   const [springs, api] = useSprings(cards.length, index => ({
-    x: -5 * (cards.length - index), // Top card is centered, others are slightly offset
+    x: -7 * (cards.length - index - 1), // Top card is centered, others are slightly offset
     y: 0,
-    scale: index === cards.length - 1 ? 1 : 0.97 ** (cards.length - index), // Top card is full size, others are slightly smaller
-    rot: index === cards.length - 1 ? 0 : -3 * (cards.length - index), // Top card has no rotation, others are slightly tilted
+    scale: index === cards.length - 1 ? 1 : 0.97 ** (cards.length - index - 1), // Top card is full size, others are slightly smaller
+    rot: index === cards.length - 1 ? 0 : -4 * (cards.length - index - 1), // Top card has no rotation, others are slightly tilted
     from: { x: 0, rot: 0, scale: 1, y: -100 }
   }));
 
   const bind = useGesture({
     onDrag: ({ args: [index], down, movement: [mx] }) => {
       api.start(i => {
+        const isTouchScreen = window.matchMedia('(hover: none)').matches;
+
         if (index !== i) {
-          return { rot: -2 * (cards.length - i), scale: 0.97 ** (cards.length - i) };
+          if (!isTouchScreen && Math.abs(mx) >= 250) {
+            return {
+              rot: -4 * (cards.length - i - 2),
+              scale: 0.97 ** (cards.length - i - 2),
+              x: -7 * (cards.length - i - 2),
+            };
+          }
+          return {};
         }
         const x = down ? mx : 0;
         const rot = mx / 100 + (down ? mx / 10 : 0);
-        const scale = down ? 1.1 : 1;
+        const scale = down ? 0.997 ** Math.abs(mx) : 1;
         return { x, rot, scale, immediate: down };
       });
     },
@@ -88,7 +97,7 @@ function App() {
       const isTouchScreen = window.matchMedia('(hover: none)').matches;
 
       // Bypass the check if the device is a touchscreen
-      if (!isTouchScreen && Math.abs(mx) < 100) {
+      if (!isTouchScreen && Math.abs(mx) < 250) {
         return;
       }
       // Animate the card moving downwards
@@ -112,7 +121,12 @@ function App() {
             return { y: 0, immediate: true }; // Reset the position for the swiped card
           }
           // Reset the position and style of other cards
-          return { y: 0, rot: -3 * (cards.length - i), scale: 0.97 ** (cards.length - i) };
+          return {
+            y: 0, rot: -4 * (cards.length - i - 1),
+            scale: 0.97 ** (cards.length - i - 1),
+            x: -7 * (cards.length - i - 1),
+
+          };
         });
       }, 300); // Timeout duration should match your animation duration
     }
