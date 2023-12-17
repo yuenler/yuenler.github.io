@@ -365,7 +365,13 @@ function App() {
             I genuinely do not know, but hopefully you found what you were looking for.
             If you want to contact me,
             you can <a href="mailto:yuenlerchow@college.harvard.edu">email me</a> or DM
-            me on <a href="https://www.linkedin.com/in/yuenler/">Linkedin</a>. Also here's my <a href="https://docs.google.com/document/d/e/2PACX-1vROVaHFw7SYKHYthJJXxSv4QumRTgY4nsAb6YGDGmdSqkqvu6c3dkkScQHx1oofALhNBTnON3n_frem/pub">resume</a> if you wanna stare at it.
+            me on <a href="https://www.linkedin.com/in/yuenler/"
+              target='_blank' rel="noreferrer"
+            >Linkedin</a>. Also here's my <a
+              href="https://docs.google.com/document/d/e/2PACX-1vROVaHFw7SYKHYthJJXxSv4QumRTgY4nsAb6YGDGmdSqkqvu6c3dkkScQHx1oofALhNBTnON3n_frem/pub"
+              target='_blank'
+              rel="noreferrer"
+            >resume</a> if you wanna stare at it.
           </p>
         </Modal.Body>
       </Modal>
