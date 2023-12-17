@@ -150,3 +150,14 @@
   0% { width: 0; }
   100% { width: 100%; }
 }
+
+.fadeOut{
+  opacity:0;
+  transition: opacity 1s;
+
+}
+.fadeIn{
+  opacity: 1;
+  transition:  opacity 1s 1s;
+
+}

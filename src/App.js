@@ -15,6 +15,8 @@ import './App.css';
 import DistanceCalculator from './DistanceCalculator';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Alert from 'react-bootstrap/Alert';
+
 import { useSprings, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
 
@@ -35,17 +37,18 @@ const phrases = [
   //   phrase: 'Quidditch player',
   //   image: quidditch
   // },
+
   {
     phrase: 'dancer',
     image: dance
   },
   {
-    phrase: 'hackathon director',
-    image: hackathon
+    phrase: 'tiny tot teacher',
+    image: stem
   },
   {
-    phrase: 'STEM educator',
-    image: stem
+    phrase: 'hackathon director',
+    image: hackathon
   },
   {
     phrase: 'software engineer',
@@ -63,6 +66,10 @@ function App() {
   const [typingText, setTypingText] = useState("");
   const cursorRef = useRef(null);
   const [cards, setCards] = useState(phrases);
+  const [showAlert, setShowAlert] = useState(false);
+  // State to ensure alert is shown only once
+  const [alertShownOnce, setAlertShownOnce] = useState(false);
+
 
   const [springs, api] = useSprings(cards.length, index => ({
     x: -7 * (cards.length - index - 1), // Top card is centered, others are slightly offset
@@ -85,7 +92,11 @@ function App() {
               x: -7 * (cards.length - i - 2),
             };
           }
-          return {};
+          return {
+            rot: -4 * (cards.length - i - 1),
+            scale: 0.97 ** (cards.length - i - 1),
+            x: -7 * (cards.length - i - 1),
+          };
         }
         const x = down ? mx : 0;
         const rot = mx / 100 + (down ? mx / 10 : 0);
@@ -98,8 +109,18 @@ function App() {
 
       // Bypass the check if the device is a touchscreen
       if (!isTouchScreen && Math.abs(mx) < 250) {
+        if (!alertShownOnce) {
+          setAlertShownOnce(true);
+          setShowAlert(true);
+          setTimeout(() => {
+            setShowAlert(false);
+          }, 4000);
+        }
         return;
       }
+
+      setAlertShownOnce(true);
+
       // Animate the card moving downwards
       api.start(i => {
         if (index !== i) return;
@@ -142,6 +163,60 @@ function App() {
   //     current.scrollIntoView({ behavior: "smooth", block: "start" });
   //   }
   // };
+
+  useEffect(() => {
+
+    const handleKeyPress = (event) => {
+      if (event.keyCode === 39 || event.keyCode === 13 || event.keyCode === 32) { // Right arrow or Enter key or Spacebar
+        // animate the card moving downwards
+        api.start(i => {
+          if (i === cards.length - 1) {
+            return { y: 1000, rot: 0, scale: 1 }; // Adjust the y value to move the card downwards
+          }
+        });
+
+        // Wait for the animation to complete, then rearrange the cards
+        setTimeout(() => {
+          setCards(prev => {
+            let newCards = [...prev];
+            const [swipedCard] = newCards.splice(cards.length - 1, 1);
+            newCards = [swipedCard, ...newCards];
+            return newCards;
+          });
+
+          // Reset the position of the swiped card
+          api.start(i => {
+            if (i === cards.length - 1) {
+              return { y: 0, immediate: true }; // Reset the position for the swiped card
+            }
+            // Reset the position and style of other cards
+            return {
+              y: 0, rot: -4 * (cards.length - i - 1),
+              scale: 0.97 ** (cards.length - i - 1),
+              x: -7 * (cards.length - i - 1),
+
+            };
+          });
+        }, 300); // Timeout duration should match your animation duration
+      }
+      else {
+        if (!alertShownOnce) {
+          setAlertShownOnce(true);
+          setShowAlert(true);
+          setTimeout(() => {
+            setShowAlert(false);
+          }, 4000);
+        }
+      }
+
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [alertShownOnce]);
 
 
   useEffect(() => {
@@ -218,6 +293,7 @@ function App() {
             </animated.div>
           ))}
         </div>
+
         <h1>Hello 👋! I'm Yuen Ler.</h1>
         <div style={{ marginBottom: 10 }}>
           <span style={{ fontSize: 30 }}>I am a </span><span style={{ fontSize: 30 }}>{`${typingText}`}</span><span
@@ -227,12 +303,30 @@ function App() {
         {/* <button onClick={handleScroll} className="hoverButton">
           <p>Learn More</p> <FontAwesomeIcon icon={faChevronDown} />
         </button> */}
+        <div style={{
+          fontSize: '1rem',
+          position: 'absolute',
+          bottom: 0,
+        }}>
+          <Alert
+            show={showAlert}
+            // onClose={() => setShowAlert(false)}
+            // dismissible
+            className={showAlert ? 'fadeIn' : 'fadeOut'}
+
+            variant="info"
+          >
+            Try dragging the card away to see my other pictures!
+          </Alert>
+        </div>
       </header >
       {/* <div ref={scrollRef}>
         <LearnMore />
       </div> */}
+
     </div >
   );
 }
+
 
 export default App;
