@@ -16,6 +16,7 @@ import DistanceCalculator from './DistanceCalculator';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Alert from 'react-bootstrap/Alert';
+import Modal from 'react-bootstrap/Modal';
 
 import { useSprings, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
@@ -69,6 +70,7 @@ function App() {
   const [showAlert, setShowAlert] = useState(false);
   // State to ensure alert is shown only once
   const [alertShownOnce, setAlertShownOnce] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
 
   const [springs, api] = useSprings(cards.length, index => ({
@@ -165,6 +167,24 @@ function App() {
   // };
 
   useEffect(() => {
+    const handleScrollAttempt = () => {
+      if (!alertShownOnce) {
+        setAlertShownOnce(true);
+        setShowAlert(true);
+        setTimeout(() => {
+          setShowAlert(false);
+        }, 4000);
+      }
+    };
+
+    window.addEventListener("wheel", handleScrollAttempt);
+
+    return () => {
+      window.removeEventListener("wheel", handleScrollAttempt);
+    };
+  }, [alertShownOnce]);
+
+  useEffect(() => {
 
     const handleKeyPress = (event) => {
       if (event.keyCode === 39 || event.keyCode === 13 || event.keyCode === 32) { // Right arrow or Enter key or Spacebar
@@ -216,7 +236,7 @@ function App() {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [alertShownOnce]);
+  }, [alertShownOnce, api, cards.length]);
 
 
   useEffect(() => {
@@ -316,10 +336,39 @@ function App() {
 
             variant="info"
           >
-            Try dragging the card away to see my other pictures!
+            Try dragging the cards to see my other pictures!
           </Alert>
         </div>
+        <p
+          style={{
+            fontSize: '0.7rem',
+            position: 'absolute',
+            bottom: 0,
+            textDecorationLine: 'underline',
+            cursor: 'pointer'
+          }}
+          onClick={() => { setShowModal(true); }}
+        >why do i have a website?</p>
       </header >
+      <Modal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Why do I have a website?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            I genuinely do not know, but hopefully you found what you were looking for.
+            If you want to contact me,
+            you can <a href="mailto:yuenlerchow@college.harvard.edu">email me</a> or DM
+            me on <a href="https://www.linkedin.com/in/yuenler/">Linkedin</a>. Also here's my <a href="https://docs.google.com/document/d/e/2PACX-1vROVaHFw7SYKHYthJJXxSv4QumRTgY4nsAb6YGDGmdSqkqvu6c3dkkScQHx1oofALhNBTnON3n_frem/pub">resume</a> if you wanna stare at it.
+          </p>
+        </Modal.Body>
+      </Modal>
       {/* <div ref={scrollRef}>
         <LearnMore />
       </div> */}
