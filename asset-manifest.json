@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.42cee9ee.css",
-    "main.js": "/static/js/main.44e83531.js",
+    "main.css": "/static/css/main.57954afc.css",
+    "main.js": "/static/js/main.a070d287.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/dance.jpg": "/static/media/dance.320d00245591a37492d1.jpg",
+    "static/media/stem.jpg": "/static/media/stem.9d55844cae427bb7c50f.jpg",
     "static/media/quidditch.jpg": "/static/media/quidditch.ebcfe8512d3cee3fd7a2.jpg",
     "static/media/siblings.jpeg": "/static/media/siblings.345a8929ab802fc7e57b.jpeg",
     "static/media/app.jpeg": "/static/media/app.4ad3155c24a6655663eb.jpeg",
     "static/media/hackathon.jpeg": "/static/media/hackathon.e08d7177e8e99fa90a71.jpeg",
     "static/media/magic.jpg": "/static/media/magic.0f79057a8ae4cde6b885.jpg",
-    "static/media/stem.jpg": "/static/media/stem.6f056759045e1ccd8607.jpg",
     "static/media/marathon.jpg": "/static/media/marathon.fc31374445eb9293db15.jpg",
     "static/media/chef.jpeg": "/static/media/chef.90a0ca49f177c42b0016.jpeg",
     "index.html": "/index.html",
-    "main.42cee9ee.css.map": "/static/css/main.42cee9ee.css.map",
-    "main.44e83531.js.map": "/static/js/main.44e83531.js.map",
+    "main.57954afc.css.map": "/static/css/main.57954afc.css.map",
+    "main.a070d287.js.map": "/static/js/main.a070d287.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.42cee9ee.css",
-    "static/js/main.44e83531.js"
+    "static/css/main.57954afc.css",
+    "static/js/main.a070d287.js"
   ]
 }
