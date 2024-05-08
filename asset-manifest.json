@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.d7293e03.css",
+    "main.css": "/static/css/main.515c9843.css",
     "main.js": "/static/js/main.3c07df2f.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/magic.png": "/static/media/magic.cd49db27abacb292f921.png",
@@ -19,12 +19,12 @@
     "static/media/voba.png": "/static/media/voba.0904b0a732a623a18902.png",
     "static/media/clinicall.jpeg": "/static/media/clinicall.2844b1e30e87ce935eba.jpeg",
     "index.html": "/index.html",
-    "main.d7293e03.css.map": "/static/css/main.d7293e03.css.map",
+    "main.515c9843.css.map": "/static/css/main.515c9843.css.map",
     "main.3c07df2f.js.map": "/static/js/main.3c07df2f.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7293e03.css",
+    "static/css/main.515c9843.css",
     "static/js/main.3c07df2f.js"
   ]
 }
