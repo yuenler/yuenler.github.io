@@ -21,7 +21,6 @@
 
 .project-card {
   cursor: pointer;
-  width: calc(50% - 10px); /* Adjust width to fit 2 cards per row with gap */
   max-width: 400px; /* Maximum width */
   border-radius: 8px; /* Rounded corners */
   background-color: #41394d !important; 
