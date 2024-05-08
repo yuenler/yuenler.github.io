@@ -1,0 +1,42 @@
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212; /* Dark background for the whole gallery */
+  color: #fff; /* White text for readability */
+  padding: 20px;
+  font-family: "Manrope", sans-serif;
+}
+
+.gallery-header {
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Gap between cards */
+}
+
+.project-card {
+  cursor: pointer;
+  width: calc(50% - 10px); /* Adjust width to fit 2 cards per row with gap */
+  max-width: 400px; /* Maximum width */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #41394d !important; 
+  color: #fff !important; /* White text for readability */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.1s, box-shadow 0.1s; /* Subtle hover effects */
+}
+
+.project-card:hover {
+  transform: scale(1.03); /* Subtle scale on hover */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5); /* More noticeable shadow on hover */
+}
+
+.project-icon {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10%; /* Subtly rounded icons */
+}

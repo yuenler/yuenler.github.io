@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "Manrope", sans-serif;
 }
 
 .profilePic {
@@ -160,4 +161,53 @@
   opacity: 1;
   transition:  opacity 1s 1s;
 
+}
+
+.dark-mode {
+  background-color: #121212; /* Dark background for the modal */
+  color: #fff; /* White text color for readability */
+}
+
+.dark-mode .modal-content {
+  background-color: #0d0929; /* Dark background for the modal content */
+  font-family: "Manrope", sans-serif;
+}
+
+.dark-mode .modal-header, .dark-mode .modal-body {
+  border-color: #444; /* Darker borders within the modal */
+}
+
+.dark-mode .btn-close {
+  color: #fff; /* Changes the color to white */
+  filter: invert(1); /* Optional: Inverts the color if it's an image */
+}
+
+.dark-mode .btn-close:hover {
+  color: #ccc; /* Lighter color on hover for better visibility */
+  filter: invert(0.9);
+}
+
+.fancy-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.fancy-button:hover, .fancy-button:focus {
+  background-image: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.fancy-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
