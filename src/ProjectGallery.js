@@ -66,7 +66,11 @@ function ProjectGallery() {
   return (
       <div className="card-container">
         {projects.map((project) => (
-          <Card key={project.id} className="project-card" onClick={() => window.open(project.githubLink, '_blank')}>
+         
+          <Card key={project.id} className="project-card">
+            <a href={project.githubLink} target="_blank" rel="noreferrer"
+            style={{textDecoration: 'none', color: 'white'}}
+            >
             <Card.Body>
               <Row>
                 <Col xs={4} md={3} className="d-flex align-items-center justify-content-center">
@@ -78,6 +82,7 @@ function ProjectGallery() {
                 </Col>
               </Row>
             </Card.Body>
+            </a>
           </Card>
         ))}
       </div>
