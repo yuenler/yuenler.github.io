@@ -21,7 +21,7 @@ const projects = [
   {
     id: 2,
     title: "Clinicall",
-    description: "Find a doctor and book an appointment automatically with AI.",
+    description: "Find a doctor and book an appointment automatically with AI. Clinicall searches for doctors covered by your insurance, reviews patient feedback, and automatically books an appointment by calling the doctor's office for you.",
     icon: clinicall,
     githubLink: "https://github.com/yuenler/clinicall"
   },
