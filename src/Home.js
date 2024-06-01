@@ -9,9 +9,10 @@ import app from './images/app.jpeg';
 import siblings from './images/siblings.jpeg';
 import hackathon from './images/hackathon.jpeg';
 import './App.css';
-// import LearnMore from './LearnMore';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 import DistanceCalculator from './DistanceCalculator';
 import Alert from 'react-bootstrap/Alert';
 import Modal from 'react-bootstrap/Modal';
@@ -366,6 +367,19 @@ function Home() {
     >
       <Modal.Header closeButton >
         <Modal.Title>My Personal Projects</Modal.Title>
+        <div
+          className='ms-5 d-flex justify-content-center align-items-center'
+        >
+          <a href="https://www.linkedin.com/in/yuenler" target="_blank" rel="noopener noreferrer" style={{ margin: '0 10px', color: '#0077b5'}}>
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+          <a href="mailto:yuenlerchow@college.harvard.edu" style={{ margin: '0 10px', color: '#ea4335' }}>
+            <FontAwesomeIcon icon={faEnvelope} size="2x" />
+          </a>
+          <a href="https://github.com/yuenler" target="_blank" rel="noopener noreferrer" style={{ margin: '0 10px', color: 'white' }}>
+            <FontAwesomeIcon icon={faGithub} size="2x" />
+          </a>
+        </div>
       </Modal.Header>
       <Modal.Body>
         <ProjectGallery />
