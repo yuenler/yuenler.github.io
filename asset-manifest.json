@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.515c9843.css",
-    "main.js": "/static/js/main.111267b2.js",
+    "main.js": "/static/js/main.c9272f62.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/magic.png": "/static/media/magic.cd49db27abacb292f921.png",
     "static/media/dance.jpg": "/static/media/dance.320d00245591a37492d1.jpg",
@@ -13,6 +13,7 @@
     "static/media/quadball.jpeg": "/static/media/quadball.a0942b3f29e4429d7766.jpeg",
     "static/media/chef.jpeg": "/static/media/chef.90a0ca49f177c42b0016.jpeg",
     "static/media/stem.jpeg": "/static/media/stem.51fccbf3de88cd1e9fd3.jpeg",
+    "static/media/syndeo.jpg": "/static/media/syndeo.ecb7f5a156bac9a99226.jpg",
     "static/media/evaluai.png": "/static/media/evaluai.8b2c0c2312e87b808e6b.png",
     "static/media/lettuce.png": "/static/media/lettuce.0ed799620b45fcb16f72.png",
     "static/media/wado.png": "/static/media/wado.e7f1f33dc1da08de389c.png",
@@ -20,11 +21,11 @@
     "static/media/clinicall.jpeg": "/static/media/clinicall.2844b1e30e87ce935eba.jpeg",
     "index.html": "/index.html",
     "main.515c9843.css.map": "/static/css/main.515c9843.css.map",
-    "main.111267b2.js.map": "/static/js/main.111267b2.js.map",
+    "main.c9272f62.js.map": "/static/js/main.c9272f62.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.515c9843.css",
-    "static/js/main.111267b2.js"
+    "static/js/main.c9272f62.js"
   ]
 }
